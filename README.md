@@ -7,13 +7,14 @@ included in the thesis. Doing it manually is prone to errors, or
 forgetting to update, and annoying if some papers had many co authors.
 Here I am showing how I did it for me. It is not a super elegant
 solution, but it works, it is automated and I thought I’d share in case
-it is usefule for others. We are going to use the Plume R package Gallou
+it is useful to others. We are going to use the Plume R package Gallou
 (2024), the [multibib
 extension](https://github.com/wlupton/pandoc-multibib) and the
 [bold-author
 filter](https://stackoverflow.com/questions/76394078/format-specific-authors-with-bold-font-in-bibliography-created-with-quarto/76429867#76429867).
 Additional resources used in this tutorial were found in this [blog
 post](https://www.andrewheiss.com/blog/2023/12/11/separate-bibliographies-quarto/).
+If you use this repo as a template you should be all set.
 
 # References and list of papers
 
@@ -50,6 +51,8 @@ different paper, apply unique to avoid duplicates, and add a ranking
 (optional). The ranking allows you to force the order if you want to
 have everyone in alphabetical order, but yourself first following by
 your supervisors and then the other co authors.
+
+### References
 
 <div id="refs" class="references csl-bib-body hanging-indent"
 entry-spacing="0" line-spacing="2">

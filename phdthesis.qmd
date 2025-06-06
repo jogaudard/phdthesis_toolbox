@@ -49,14 +49,6 @@ options(tidyverse.quiet = TRUE)
 
 ```
 
-# Scientific environment
-
-# Acknowledgements
-
-# Abstract in English
-
-# Abstract in Norwegian
-
 # List of Publications
 
 ## Publications included in the thesis
@@ -164,27 +156,11 @@ aut$get_affiliations() |> cat(sep = "\n\n")
 <!-- # Contents -->
 \tableofcontents
 
-# Introduction
-
 # Aims of this thesis
 
-We write smart things and we cite stuff @corriher2008bakewise.
-
-# Methodological approach
-
-# Results
-
-# Discussion and remarks
+We write smart things and we cite stuff [@corriher2008bakewise].
 
 # References
 
 ::: {#refs-references}
 :::
-
-# Paper I
-
-# Paper II
-
-# Paper III
-
-# Paper IV

@@ -5,7 +5,6 @@ format:
   pdf:
     number-sections: true
     number-depth: 4
-    keep-tex: true
     colorlinks: false
 date: today
 execute:
@@ -101,24 +100,6 @@ contributions_paper2 <- aut_paper2$get_contributions(
 ) |>
 c()
 
-grazingflux_authors <- read_sheet(gs4_find("authors_grazingcflux"))
-
-aut_grazingflux <- Plume$new(grazingflux_authors)
-contributions_grazingflux <- aut_grazingflux$get_contributions(
-  dotted_initials = FALSE,
-  sep_last = ", "
-) |>
-c()
-
-inclineflux_authors <- read_sheet(gs4_find("authors_inclineflux"))
-
-aut_inclineflux <- Plume$new(inclineflux_authors)
-contributions_inclineflux <- aut_inclineflux$get_contributions(
-  dotted_initials = FALSE,
-  sep_last = ", "
-) |>
-c()
-
 contrib_paper <- function(
   aut_vec, # a vector of author contributions as produced with aut$get_contributions() |> c()
   paper_name, # name of the paper
@@ -162,8 +143,9 @@ kable(contrib_tbl)
 authors <- bind_rows(paper1_authors, paper2_authors) |>
   select(given_name, family_name, affiliation_1, affiliation_2) |>
   unique() |>
+  # pass this as comments first to see what the order is, and then attribute ranking and arrange
   mutate( # we add ranking to sort by me, supervisors, others
-    ranking = 1
+    ranking = c(1, 2, 3, 3)
   ) |>
   arrange(ranking, family_name)
 

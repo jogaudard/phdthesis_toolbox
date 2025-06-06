@@ -32,6 +32,10 @@ items from one of the bibliographies is called, it will throw an error.
 Which means that when you are just starting, you should just call at
 least one reference of each to be able to render.
 
+To display the PhD papers with “Paper I:” before the entry, I did not
+find a better solution than modifying the entry in the bib file, before
+the first author.
+
 # Table with author contributions
 
 To setup the Plume workflow, I can only point to Arnaud’s excellent

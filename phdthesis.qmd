@@ -1,0 +1,208 @@
+---
+title: "Cakes and bricks: same shape, different impact"
+author: Jean-Bob Delatourte
+format:
+  pdf:
+    number-sections: true
+    number-depth: 4
+    keep-tex: true
+    colorlinks: false
+date: today
+execute:
+  echo: false
+bibliography:
+  papers: phd_papers.bib
+  other: others.bib
+  references: refs_list.bib
+csl: apa-old-doi-prefix.csl
+filters:
+  - multibib
+  - bold-author
+bold-auth-name:
+  - family: Delatarte
+    given: J.-B.
+validate-yaml: false
+citeproc: false
+crossref:
+  custom:
+    - kind: float
+      key: apptbl
+      latex-env: apptbl
+      reference-prefix: Table A
+      space-before-numbering: false
+      latex-list-of-description: Appendix Table
+nocite: |
+  @stupid
+  @coolpaper
+  @thatotherpaper
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+options(knitr.kable.NA = '')
+options(tidyverse.quiet = TRUE)
+
+```
+
+# Scientific environment
+
+# Acknowledgements
+
+# Abstract in English
+
+# Abstract in Norwegian
+
+# List of Publications
+
+## Publications included in the thesis
+
+::: {#refs-papers}
+:::
+
+## Contributions to other publications during the PhD period
+
+::: {#refs-other}
+:::
+
+## Authors contribution
+```{r}
+#| label: contributions
+#| include: false
+
+library(googlesheets4)
+library(plume)
+library(tidyverse)
+library(rticles)
+library(knitr)
+
+
+
+paper1_authors <- read_sheet(gs4_find("authors_paper1"))
+
+aut_paper1 <- Plume$new(paper1_authors)
+contributions_paper1 <- aut_paper1$get_contributions(
+  dotted_initials = FALSE,
+  sep_last = ", "
+) |>
+c()
+
+paper2_authors <- read_sheet(gs4_find("authors_paper2"))
+
+aut_paper2 <- Plume$new(paper2_authors)
+contributions_paper2 <- aut_paper2$get_contributions(
+  dotted_initials = FALSE,
+  sep_last = ", "
+) |>
+c()
+
+grazingflux_authors <- read_sheet(gs4_find("authors_grazingcflux"))
+
+aut_grazingflux <- Plume$new(grazingflux_authors)
+contributions_grazingflux <- aut_grazingflux$get_contributions(
+  dotted_initials = FALSE,
+  sep_last = ", "
+) |>
+c()
+
+inclineflux_authors <- read_sheet(gs4_find("authors_inclineflux"))
+
+aut_inclineflux <- Plume$new(inclineflux_authors)
+contributions_inclineflux <- aut_inclineflux$get_contributions(
+  dotted_initials = FALSE,
+  sep_last = ", "
+) |>
+c()
+
+contrib_paper <- function(
+  aut_vec, # a vector of author contributions as produced with aut$get_contributions() |> c()
+  paper_name, # name of the paper
+  split = ": " # same as divider in get_contributions
+){
+lapply(aut_vec, string_to_table, n = 2, split_regex = split) |>
+  bind_rows() |>
+  rename(
+    Role = "X1",
+    {{paper_name}} := "X2"
+  )
+}
+
+contrib_paper1 <- contrib_paper(
+  contributions_paper1,
+  "Paper I"
+)
+
+contrib_paper2 <- contrib_paper(
+  contributions_paper2,
+  "Paper II"
+)
+
+contrib_tbl <- full_join(
+  contrib_paper1,
+  contrib_paper2,
+  by = "Role"
+)
+```
+
+```{r}
+#| results: asis
+#| tbl-colwidths: [30, 30, 30]
+kable(contrib_tbl)
+```
+
+```{r}
+#| label: authors
+#| include: false
+
+authors <- bind_rows(paper1_authors, paper2_authors) |>
+  select(given_name, family_name, affiliation_1, affiliation_2) |>
+  unique() |>
+  mutate( # we add ranking to sort by me, supervisors, others
+    ranking = 1
+  ) |>
+  arrange(ranking, family_name)
+
+aut <- Plume$new(authors)
+
+```
+
+`r aut$get_author_list("^a^")`
+
+```{r}
+#| results: asis
+aut$get_affiliations() |> cat(sep = "\n\n")
+```
+
+
+<!-- # Contents -->
+\tableofcontents
+
+# Introduction
+
+# Aims of this thesis
+
+We write smart things and we cite stuff @corriher2008bakewise.
+
+# Methodological approach
+
+# Results
+
+# Discussion and remarks
+
+# References
+
+::: {#refs-references}
+:::
+
+# Paper I
+
+# Paper II
+
+# Paper III
+
+# Paper IV

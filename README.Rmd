@@ -1,0 +1,26 @@
+---
+output: github_document
+bibliography: /home/jga051/Dropbox/PhD/biblio_phd_zot.bib
+csl: /home/jga051/Documents/01_PhD/emerald-harvard.csl
+---
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# Some technical tricks to write a PhD thesis in Quarto
+
+I thought some stuff I am doing for my own thesis, in case it is useful to anyone.
+
+# Dealing with many co-authors
+
+
+# List of manuscripts
+
+# Table with author contributions
+
+# List of authors with affiliations

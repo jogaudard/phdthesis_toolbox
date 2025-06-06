@@ -18,7 +18,7 @@ filters:
   - multibib
   - bold-author
 bold-auth-name:
-  - family: Delatarte
+  - family: Delatourte
     given: J.-B.
 validate-yaml: false
 citeproc: false

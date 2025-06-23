@@ -629,10 +629,14 @@ during the time of the thesis (<code>others.bib</code>)</li>
 <p>I use multibib to call them at different places. In the yaml, I add
 <code>nocite:</code> with the keys of the items from
 <code>phd_paper.bib</code> and <code>others.bib</code> since there are
-not cited in the text. Note that if no items from one of the
-bibliographies is called, it will throw an error. Which means that when
-you are just starting, you should just call at least one reference of
-each to be able to render.</p>
+not cited in the text. In case a paper from <code>others.bib</code> is
+cited in the text, you need to have it both in <code>others.bib</code>
+and <code>refs_list.bib</code> with the same key, and remove the key
+from <code>nocite</code>. Otherwise, the inline citation will appear
+will all the authors listed insted of “et al.” Note that if no items
+from one of the bibliographies is called, it will throw an error. Which
+means that when you are just starting, you should just call at least one
+reference of each to be able to render.</p>
 <p>To display the PhD papers with “Paper I:” before the entry, I did not
 find a better solution than modifying the entry in the bib file, before
 the first author.</p>

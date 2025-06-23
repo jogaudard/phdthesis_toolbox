@@ -31,6 +31,8 @@ I have three bib files:
 
 I use multibib to call them at different places.
 In the yaml, I add `nocite:` with the keys of the items from `phd_paper.bib` and `others.bib` since there are not cited in the text.
+In case a paper from `others.bib` is cited in the text, you need to have it both in `others.bib` and `refs_list.bib` with the same key, and remove the key from `nocite`.
+Otherwise, the inline citation will appear will all the authors listed insted of "et al."
 Note that if no items from one of the bibliographies is called, it will throw an error.
 Which means that when you are just starting, you should just call at least one reference of each to be able to render.
 

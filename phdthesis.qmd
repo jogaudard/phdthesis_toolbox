@@ -22,14 +22,6 @@ bold-auth-name:
     given: J.-B.
 validate-yaml: false
 citeproc: false
-crossref:
-  custom:
-    - kind: float
-      key: apptbl
-      latex-env: apptbl
-      reference-prefix: Table A
-      space-before-numbering: false
-      latex-list-of-description: Appendix Table
 nocite: |
   @stupid
   @coolpaper
@@ -160,7 +152,11 @@ aut$get_affiliations() |> cat(sep = "\n\n")
 
 We write smart things and we cite stuff [@corriher2008bakewise].
 
-# References
+Inline @lee2012literature blablabla.
+
+Or just the year -@barham2001science and nothing else.
+
+# References {.unnumbered}
 
 ::: {#refs-references}
 :::

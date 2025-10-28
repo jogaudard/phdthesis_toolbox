@@ -3,8 +3,7 @@ title: "Cakes and bricks: same shape, different impact"
 author: Jean-Bob Delatourte
 format:
   pdf:
-    number-sections: true
-    number-depth: 4
+    number-sections: false
     colorlinks: false
     include-in-header: 
       text: |
@@ -140,10 +139,6 @@ aut$get_affiliations() |> cat(sep = "\n\n")
 
 # Introduction
 
-This is an introduction.
-
-# Aims of this thesis
-
 We write smart things and we cite stuff [@corriher2008bakewise].
 
 Inline @lee2012literature blablabla.
@@ -151,6 +146,10 @@ Inline @lee2012literature blablabla.
 Or just the year -@barham2001science and nothing else.
 
 We can also cite a paper where we are co author [@delatourte2025] and the name will not be in bold in the references list.
+
+# Aims of this thesis
+
+\lipsum
 
 ## Sub section
 

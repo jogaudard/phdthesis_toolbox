@@ -601,6 +601,7 @@ padding-top: 0px;
 
 <body>
 
+<h1 id="thesis-quarto-template">Thesis Quarto Template</h1>
 <h1 id="a-phd-thesis-with-many-co-authors">A PhD thesis with many
 co-authors</h1>
 <p>At the University of Bergen (probably other places too), it is
@@ -626,17 +627,28 @@ during the time of the thesis (<code>others.bib</code>)</li>
 <li>Standard bibliography as produced by Zotero
 (<code>refs_list.bib</code>).</li>
 </ul>
-<p>I use multibib to call them at different places. In the yaml, I add
-<code>nocite:</code> with the keys of the items from
-<code>phd_paper.bib</code> and <code>others.bib</code> since there are
-not cited in the text. In case a paper from <code>others.bib</code> is
-cited in the text, you need to have it both in <code>others.bib</code>
-and <code>refs_list.bib</code> with the same key, and remove the key
-from <code>nocite</code>. Otherwise, the inline citation will appear
-will all the authors listed insted of “et al.” Note that if no items
-from one of the bibliographies is called, it will throw an error. Which
-means that when you are just starting, you should just call at least one
-reference of each to be able to render.</p>
+<p>We want a list of scientific contributions at the beginning of the
+thesis, with a formatting on the line of “Paper I:
+<strong>Author</strong> and other (Year) Title. Journal.”. But in the
+actual references at the end of the thesis, we want all the papers
+(including the ones not included in the thesis) to appear in the same
+list, with proper formatting (et al. after a certain number of authors,
+doi link, etc), and no author name in bold. To achieve that, I create
+the list of scientific contributions in a separate qmd file
+(<code>paper_list.qmd</code>) that outputs a md file. In the main file
+(<code>phdthesis.qmd</code>), I add an
+<code>{{&lt; include paper_list.md &gt;}}</code>.</p>
+<p>In <code>paper_list.qmd</code>, I use multibib to create two separate
+bibliographies, one for the papers included in the thesis, and one for
+the other contributions. In the yaml, I add <code>nocite:</code> with
+the keys of the items from <code>phd_paper.bib</code> and
+<code>others.bib</code> since there are not cited in the text. In the
+main thesis file, I just have one bibliography including all the
+references from the three bib files.</p>
+<p>Note that if no items from one of the bibliographies is called, it
+will throw an error. Which means that when you are just starting, you
+should just call at least one reference of each to be able to
+render.</p>
 <p>To display the PhD papers with “Paper I:” before the entry, I did not
 find a better solution than modifying the entry in the bib file, before
 the first author.</p>

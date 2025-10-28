@@ -3,30 +3,23 @@ title: "Cakes and bricks: same shape, different impact"
 author: Jean-Bob Delatourte
 format:
   pdf:
-    number-sections: true
-    number-depth: 4
+    number-sections: false
     colorlinks: false
+    include-in-header: 
+      text: |
+        \usepackage{lipsum}
 date: today
 execute:
   echo: false
-bibliography:
-  papers: phd_papers.bib
-  other: others.bib
-  references: refs_list.bib
+bibliography: refs_list.bib
 csl: apa-old-doi-prefix.csl
-filters:
-  - multibib
-  - bold-author
-bold-auth-name:
-  - family: Delatourte
-    given: J.-B.
-validate-yaml: false
-citeproc: false
 nocite: |
   @stupid
   @coolpaper
   @thatotherpaper
 ---
+
+\pagenumbering{Roman}
 
 ```{r}
 #| label: setup
@@ -43,15 +36,7 @@ options(tidyverse.quiet = TRUE)
 
 # List of Publications
 
-## Publications included in the thesis
-
-::: {#refs-papers}
-:::
-
-## Contributions to other publications during the PhD period
-
-::: {#refs-other}
-:::
+{{< include paper_list.md >}}
 
 ## Authors contribution
 ```{r}
@@ -147,8 +132,12 @@ aut$get_affiliations() |> cat(sep = "\n\n")
 
 <!-- # Contents -->
 \tableofcontents
+\newpage
+\setcounter{section}{0}
+\setcounter{page}{0}
+\pagenumbering{arabic}
 
-# Aims of this thesis
+# Introduction
 
 We write smart things and we cite stuff [@corriher2008bakewise].
 
@@ -156,7 +145,19 @@ Inline @lee2012literature blablabla.
 
 Or just the year -@barham2001science and nothing else.
 
+We can also cite a paper where we are co author [@delatourte2025] and the name will not be in bold in the references list.
+
+# Aims of this thesis
+
+\lipsum
+
+## Sub section
+
+
+\lipsum
+
+
 # References {.unnumbered}
 
-::: {#refs-references}
+::: {#refs}
 :::

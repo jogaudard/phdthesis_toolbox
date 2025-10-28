@@ -1,5 +1,6 @@
 ---
 title: "Thesis Quarto Template"
+author: "Joseph Gaudard"
 output: github_document
 bibliography: /home/jga051/Dropbox/PhD/biblio_phd_zot.bib
 csl: /home/jga051/Documents/01_PhD/emerald-harvard.csl
@@ -14,7 +15,7 @@ knitr::opts_chunk$set(
 ```
 
 
-# A PhD thesis with many co-authors
+<!-- # A PhD thesis with many co-authors -->
 At the University of Bergen (probably other places too), it is required to have a table presenting the author contributions from all the papers included in the thesis.
 Doing it manually is prone to errors, or forgetting to update, and annoying if some papers had many co authors.
 Here I am showing how I did it for me.

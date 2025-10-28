@@ -1,7 +1,8 @@
 Thesis Quarto Template
 ================
+Joseph Gaudard
 
-# A PhD thesis with many co-authors
+<!-- # A PhD thesis with many co-authors -->
 
 At the University of Bergen (probably other places too), it is required
 to have a table presenting the author contributions from all the papers

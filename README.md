@@ -1,3 +1,5 @@
+Thesis Quarto Template
+================
 
 # A PhD thesis with many co-authors
 
@@ -25,16 +27,26 @@ I have three bib files:
   the time of the thesis (`others.bib`)
 - Standard bibliography as produced by Zotero (`refs_list.bib`).
 
-I use multibib to call them at different places. In the yaml, I add
-`nocite:` with the keys of the items from `phd_paper.bib` and
-`others.bib` since there are not cited in the text. In case a paper from
-`others.bib` is cited in the text, you need to have it both in
-`others.bib` and `refs_list.bib` with the same key, and remove the key
-from `nocite`. Otherwise, the inline citation will appear will all the
-authors listed insted of “et al.” Note that if no items from one of the
-bibliographies is called, it will throw an error. Which means that when
-you are just starting, you should just call at least one reference of
-each to be able to render.
+We want a list of scientific contributions at the beginning of the
+thesis, with a formatting on the line of “Paper I: **Author** and other
+(Year) Title. Journal.”. But in the actual references at the end of the
+thesis, we want all the papers (including the ones not included in the
+thesis) to appear in the same list, with proper formatting (et al. after
+a certain number of authors, doi link, etc), and no author name in bold.
+To achieve that, I create the list of scientific contributions in a
+separate qmd file (`paper_list.qmd`) that outputs a md file. In the main
+file (`phdthesis.qmd`), I add an `{{< include paper_list.md >}}`.
+
+In `paper_list.qmd`, I use multibib to create two separate
+bibliographies, one for the papers included in the thesis, and one for
+the other contributions. In the yaml, I add `nocite:` with the keys of
+the items from `phd_paper.bib` and `others.bib` since there are not
+cited in the text. In the main thesis file, I just have one bibliography
+including all the references from the three bib files.
+
+Note that if no items from one of the bibliographies is called, it will
+throw an error. Which means that when you are just starting, you should
+just call at least one reference of each to be able to render.
 
 To display the PhD papers with “Paper I:” before the entry, I did not
 find a better solution than modifying the entry in the bib file, before

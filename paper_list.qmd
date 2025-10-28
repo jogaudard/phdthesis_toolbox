@@ -1,0 +1,29 @@
+---
+csl: apa-old-doi-prefix.csl
+format: gfm
+filters:
+  - multibib
+  - bold-author
+bold-auth-name:
+  - family: Delatourte
+    given: J.-B.
+bibliography:
+  papers: phd_papers.bib
+  other: others.bib
+nocite: |
+  @stupid
+  @coolpaper
+  @thatotherpaper
+validate-yaml: false
+---
+
+## Publications included in the thesis
+
+
+::: {#refs-papers}
+:::
+
+## Contributions to other publications during the PhD period
+
+::: {#refs-other}
+:::

@@ -28,6 +28,8 @@ nocite: |
   @thatotherpaper
 ---
 
+\pagenumbering{Roman}
+
 ```{r}
 #| label: setup
 #| include: false
@@ -147,6 +149,14 @@ aut$get_affiliations() |> cat(sep = "\n\n")
 
 <!-- # Contents -->
 \tableofcontents
+\newpage
+\setcounter{section}{0}
+\setcounter{page}{0}
+\pagenumbering{arabic}
+
+# Introduction
+
+This is an introduction.
 
 # Aims of this thesis
 
@@ -155,6 +165,8 @@ We write smart things and we cite stuff [@corriher2008bakewise].
 Inline @lee2012literature blablabla.
 
 Or just the year -@barham2001science and nothing else.
+
+## Sub section
 
 # References {.unnumbered}
 

@@ -6,6 +6,9 @@ format:
     number-sections: true
     number-depth: 4
     colorlinks: false
+    include-in-header: 
+      text: |
+        \usepackage{lipsum}
 date: today
 execute:
   echo: false
@@ -167,6 +170,10 @@ Inline @lee2012literature blablabla.
 Or just the year -@barham2001science and nothing else.
 
 ## Sub section
+
+
+\lipsum
+
 
 # References {.unnumbered}
 

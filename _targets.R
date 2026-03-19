@@ -10,12 +10,6 @@ library(targets)
 # Set target options:
 tar_option_set(
   packages = c(
-    "tibble",
-    "googlesheets4",
-    "plume",
-    "tidyverse",
-    "rticles",
-    "knitr",
     "quarto"
   ) # Packages that your targets need for their tasks.
   # format = "qs", # Optionally set the default storage format. qs is fast.

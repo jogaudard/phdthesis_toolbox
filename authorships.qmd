@@ -14,10 +14,7 @@ bold-auth-name:
 bibliography:
   papers: papers.bib
 nocite: |
-  @fluxible_thesis
-  @threeddata_thesis
-  @threedflux_thesis
-  @inclineflux_thesis
+  @*
 validate-yaml: false
 execute:
   echo: false

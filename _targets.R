@@ -48,16 +48,15 @@ tar_option_set(
 )
 
 # Run the R scripts in the R/ folder with your custom functions:
-# tar_source()
+tar_source()
 # tar_source("other_functions.R") # Source other scripts as needed.
 
 # Replace the target list below with your own:
 list(
-  # tar_target( # checking if the phd paper list is up to date
-  #   phd_papers,
-  #   "phd_papers.bib",
-  #   format = "file"
-  # ),
+  tar_target(
+    name = authors_tbl,
+    command = authors_tbl()
+  ),
   tar_quarto(
     name = render_paper_list,
     path = "paper_list.qmd",

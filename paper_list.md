@@ -21,13 +21,6 @@ building a house on a budget*.
 
 </div>
 
-<div id="ref-thirdpaper" class="csl-entry">
-
-Paper III: **Delatourte, J.-B.** (2025). *Nobody wanted to write this
-paper with me*.
-
-</div>
-
 </div>
 
 ## Contributions to other publications during the PhD period

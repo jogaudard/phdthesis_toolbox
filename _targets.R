@@ -11,7 +11,13 @@ library(tarchetypes)
 # Set target options:
 tar_option_set(
   packages = c(
-    "quarto"
+    "quarto",
+    "tibble",
+    "googlesheets4",
+    "plume",
+    "tidyverse",
+    "rticles",
+    "knitr"
   ) # Packages that your targets need for their tasks.
   # format = "qs", # Optionally set the default storage format. qs is fast.
   #
@@ -48,14 +54,14 @@ tar_option_set(
 )
 
 # Run the R scripts in the R/ folder with your custom functions:
-tar_source()
+tar_source() # Source other scripts as needed.
 # tar_source("other_functions.R") # Source other scripts as needed.
 
 # Replace the target list below with your own:
 list(
   tar_target(
     name = authors_tbl,
-    command = authors_tbl()
+    command = authors_tbl_fct("authors_paper1", "authors_paper2")
   ),
   tar_quarto(
     name = render_paper_list,

@@ -63,7 +63,9 @@ lapply(my_packages, library, character.only = TRUE)
 ```{r}
 #| results: asis
 #| tbl-colwidths: [30, 30, 30]
-kable(contrib_tbl)
+
+library(targets)
+kable(tar_read(authors_tbl))
 ```
 
 ```{r}

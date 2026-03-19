@@ -15,8 +15,9 @@ tar_option_set(
     "plume",
     "tidyverse",
     "rticles",
-    "knitr"
-    ) # Packages that your targets need for their tasks.
+    "knitr",
+    "quarto"
+  ) # Packages that your targets need for their tasks.
   # format = "qs", # Optionally set the default storage format. qs is fast.
   #
   # Pipelines that take a long time to run may benefit from
@@ -52,18 +53,18 @@ tar_option_set(
 )
 
 # Run the R scripts in the R/ folder with your custom functions:
-tar_source()
+# tar_source()
 # tar_source("other_functions.R") # Source other scripts as needed.
 
 # Replace the target list below with your own:
 list(
   tar_target(
-    name = data,
-    command = tibble(x = rnorm(100), y = rnorm(100))
+    name = render_paper_list,
+    command = quarto_render("paper_list.qmd")
     # format = "qs" # Efficient storage for general data objects.
   ),
   tar_target(
-    name = model,
-    command = coefficients(lm(y ~ x, data = data))
+    name = render_thesis,
+    command = quarto_render("phdthesis.qmd", output_format = "all")
   )
 )

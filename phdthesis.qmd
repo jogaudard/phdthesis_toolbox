@@ -2,6 +2,7 @@
 title: "Cakes and bricks: same shape, different impact"
 author: Jean-Bob Delatourte
 format:
+  docx: default
   pdf:
     number-sections: false
     colorlinks: false
@@ -32,9 +33,21 @@ knitr::opts_chunk$set(
 options(knitr.kable.NA = '')
 options(tidyverse.quiet = TRUE)
 
+my_packages <- c(
+  "tibble",
+    "googlesheets4",
+    "plume",
+    "tidyverse",
+    "rticles",
+    "knitr"
+)
+
+lapply(my_packages, library, character.only = TRUE)
+
 ```
 
 # List of Publications
+
 
 {{< include paper_list.md >}}
 
@@ -43,11 +56,6 @@ options(tidyverse.quiet = TRUE)
 #| label: contributions
 #| include: false
 
-library(googlesheets4)
-library(plume)
-library(tidyverse)
-library(rticles)
-library(knitr)
 
 
 

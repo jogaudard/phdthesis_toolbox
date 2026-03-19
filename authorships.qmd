@@ -1,0 +1,72 @@
+---
+title: Declaration of author contributions - PhD thesis Joseph Gaudard
+csl: /home/jga051/Documents/01_PhD/methods-in-ecology-and-evolution.csl
+format:
+    pdf: default
+    docx:
+        number-sections: true
+filters:
+  - multibib
+  - bold-author
+bold-auth-name:
+  - family: Gaudard
+    given: J.
+bibliography:
+  papers: papers.bib
+nocite: |
+  @fluxible_thesis
+  @threeddata_thesis
+  @threedflux_thesis
+  @inclineflux_thesis
+validate-yaml: false
+execute:
+  echo: false
+---
+
+\phantomsection
+# Publications included in the thesis {.unnumbered}
+
+::: {#refs-papers}
+:::
+
+\newpage
+\phantomsection
+# Authors contributions {.unnumbered}
+
+```{r}
+#| label: setup
+#| include: false
+
+my_packages <- c(
+    "knitr",
+    "plume"
+)
+
+lapply(my_packages, library, character.only = TRUE)
+
+
+contrib_tbl <- readRDS("contrib_tbl.rds")
+aut <- readRDS("aut.rds")
+
+```
+
+```{r}
+#| results: asis
+#| tbl-colwidths: [30, 30, 30]
+
+options(knitr.kable.NA = '')
+kable(contrib_tbl)
+```
+
+\vspace{0.5cm}
+
+Bergen, \today
+
+\vspace{0.8cm}
+
+Supervisor
+\hspace{1.5cm}
+Supervisor
+\hspace{1.5cm}
+Supervisor
+

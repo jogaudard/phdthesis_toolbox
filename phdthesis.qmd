@@ -43,11 +43,6 @@ options(tidyverse.quiet = TRUE)
 #| label: contributions
 #| include: false
 
-library(googlesheets4)
-library(plume)
-library(tidyverse)
-library(rticles)
-library(knitr)
 
 
 

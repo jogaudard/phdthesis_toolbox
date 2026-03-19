@@ -1,3 +1,3 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-render_thesis|stem|32f7f6a60f0d745f|e79fb30e5954dbff|2c530c1562a7fbd1|-204868229||t20531.5593553851s|s44b|44|rds|local|vector|||12.945||
-render_paper_list|stem|32f7f6a60f0d745f|2fb0d869bb38d323|2c530c1562a7fbd1|953443845||t20531.5593613343s|s44b|44|rds|local|vector|||0.479||
+render_paper_list|stem|2574d06aa01140ab|0c4a7b87b50212c6|2c530c1562a7fbd1|953443845|paper_list.md*paper_list.qmd*_extensions/pandoc-ext/bold-author/_extension.yaml*_extensions/pandoc-ext/bold-author/bold-author.lua*_extensions/pandoc-ext/multibib/_extension.yaml*_extensions/pandoc-ext/multibib/multibib.lua|t20531.5670340959s|s8631b|8631|file|local|vector|||0.603||
+render_thesis|stem|2457ed19f60276f7|f28a0b2bc663955e|2c530c1562a7fbd1|-204868229|phdthesis.docx*phdthesis.pdf*paper_list.md*phdthesis.qmd*_extensions/pandoc-ext/bold-author/_extension.yaml*_extensions/pandoc-ext/bold-author/bold-author.lua*_extensions/pandoc-ext/multibib/_extension.yaml*_extensions/pandoc-ext/multibib/multibib.lua|t20531.568922714s|s65069b|65069|file|local|vector|||21.155||

@@ -2,6 +2,7 @@
 title: "Cakes and bricks: same shape, different impact"
 author: Jean-Bob Delatourte
 format:
+  docx: default
   pdf:
     number-sections: false
     colorlinks: false
@@ -46,6 +47,7 @@ lapply(my_packages, library, character.only = TRUE)
 ```
 
 # List of Publications
+
 
 {{< include paper_list.md >}}
 

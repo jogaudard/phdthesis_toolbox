@@ -5,6 +5,7 @@
 
 # Load packages required to define the pipeline:
 library(targets)
+library(tarchetypes)
 # library(tarchetypes) # Load other packages as needed.
 
 # Set target options:
@@ -52,13 +53,13 @@ tar_option_set(
 
 # Replace the target list below with your own:
 list(
-  tar_target(
+  tar_quarto(
     name = render_paper_list,
-    command = quarto_render("paper_list.qmd")
+    path = "paper_list.qmd"
     # format = "qs" # Efficient storage for general data objects.
   ),
-  tar_target(
+  tar_quarto(
     name = render_thesis,
-    command = quarto_render("phdthesis.qmd", output_format = "all")
+    path = "phdthesis.qmd"
   )
 )

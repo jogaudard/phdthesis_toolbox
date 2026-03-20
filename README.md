@@ -4,18 +4,19 @@ Joseph Gaudard
 
 <!-- # A PhD thesis with many co-authors -->
 
-At the University of Bergen (probably other places too), it is required
-to have a table presenting the author contributions from all the papers
-included in the thesis. Doing it manually is prone to errors, or
-forgetting to update, and annoying if some papers had many co authors.
-Here I am showing how I did it for me. It is not a super elegant
-solution, but it works, it is automated and I thought I’d share in case
-it is useful to others. We are going to use the Plume R package Gallou
-(2024), the [multibib
+At the University of Bergen (probably other places too), it is common
+practice to have a table presenting the author contributions from all
+the papers included in the thesis. Doing it manually is prone to errors,
+or forgetting to update, and annoying if some papers had many co
+authors. Here I am showing how I did it for me. It is not a super
+elegant solution, but it works, it is automated and I thought I’d share
+in case it is useful to others. We are going to use the Plume R package
+Gallou (2025), the [multibib
 extension](https://github.com/wlupton/pandoc-multibib) and the
 [bold-author
 filter](https://stackoverflow.com/questions/76394078/format-specific-authors-with-bold-font-in-bibliography-created-with-quarto/76429867#76429867).
-Additional resources used in this tutorial were found in this [blog
+Additional resources used in this template repos were found in this
+[blog
 post](https://www.andrewheiss.com/blog/2023/12/11/separate-bibliographies-quarto/).
 If you use this repo as a template you should be all set.
 
@@ -29,7 +30,7 @@ I have three bib files:
 - Standard bibliography as produced by Zotero (`refs_list.bib`).
 
 We want a list of scientific contributions at the beginning of the
-thesis, with a formatting on the line of “Paper I: **Author** and other
+thesis, with a formatting on the idea of “Paper I: **Author** and other
 (Year) Title. Journal.”. But in the actual references at the end of the
 thesis, we want all the papers (including the ones not included in the
 thesis) to appear in the same list, with proper formatting (et al. after
@@ -40,10 +41,11 @@ file (`phdthesis.qmd`), I add an `{{< include paper_list.md >}}`.
 
 In `paper_list.qmd`, I use multibib to create two separate
 bibliographies, one for the papers included in the thesis, and one for
-the other contributions. In the yaml, I add `nocite:` with the keys of
-the items from `phd_paper.bib` and `others.bib` since there are not
-cited in the text. In the main thesis file, I just have one bibliography
-including all the references from the three bib files.
+the other contributions. In the yaml, I add `nocite: @*` to cite all the
+items from `phd_paper.bib` and `others.bib` since there are not cited in
+the text. Alternatively, you can call them with their key, if you want
+to have more control. In the main thesis file, I just have one
+bibliography including all the references from the three bib files.
 
 Note that if no items from one of the bibliographies is called, it will
 throw an error. Which means that when you are just starting, you should
@@ -58,11 +60,12 @@ the first author.
 To setup the Plume workflow, I can only point to Arnaud’s excellent
 [documentation](https://arnaudgallou.github.io/plume/index.html).
 Ideally you have done that for the papers already, so the google sheets
-with author contributions are all set and you can reuse them. In the
-code bloc `contributions`, I wrote the `contrib_paper` function that
-transforms the output of Plume into a table. Then the tables of the
-different papers are joined together (use `full_join` in case some
-contributions appear for one paper and not the others).
+with author contributions are all set and you can reuse them. I wrote
+several function in `authors_tbl_fct.R` to produce author lists and
+contributions tables that are used in the thesis and authorship
+statement. Then the tables of the different papers are joined together
+(use `full_join` in case some contributions appear for one paper and not
+the others).
 
 # List of authors with affiliations
 
@@ -73,15 +76,50 @@ different paper, apply unique to avoid duplicates, and add a ranking
 have everyone in alphabetical order, but yourself first following by
 your supervisors and then the other co authors.
 
+# Authorship statement
+
+The authorship statement is produced with Plume as well, using the same
+author contribution tables as for the contributions table in the thesis.
+That way, we avoid errors. To update the manuscript titles, just change
+them in the `phd_paper.bib` file and rerun the targets.
+
+# Rendering the thesis
+
+The repo is now organised with `targets` (Landau, 2021) and you just
+need to run the following code to render everything:
+
+``` r
+targets::tar_make()
+```
+
+If you are using large dataset or making figures in the thesis itself,
+you can add them as targets in the `_targets.R` file and they will be
+automatically updated when you change the data or the code to make the
+figures.
+
+The papers are added as pdf files, so there you do whatever you want to
+produce them. Published papers can be added as pdfs too.
+
 ### References
 
 <div id="refs" class="references csl-bib-body hanging-indent"
 entry-spacing="0" line-spacing="2">
 
-<div id="ref-gallouPlumeSimpleAuthor2024" class="csl-entry">
+<div id="ref-gallouPlumeSimpleAuthor2025" class="csl-entry">
 
-Gallou, A. (2024), *Plume: A Simple Author Handler for Scientific
-Writing*, Manual,.
+Gallou, A. (2025), *Plume: A Simple Author Handler for Scientific
+Writing*, Manual, available
+at:<https://doi.org/10.32614/CRAN.package.plume>.
+
+</div>
+
+<div id="ref-targetsRpackage2021" class="csl-entry">
+
+Landau, W.M. (2021), “[The targets R package: A dynamic
+<span class="nocase">Make-like</span> function-oriented pipeline toolkit
+for reproducibility and high-performance
+computing](https://doi.org/10.21105/joss.02959)”, *Journal of Open
+Source Software*, Vol. 6 No. 57, p. 2959.
 
 </div>
 

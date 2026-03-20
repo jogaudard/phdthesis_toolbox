@@ -1,6 +1,13 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 auhtors_tbl|function|8cdbd4aaa6886598
-authors_tbl_fct|function|8cdbd4aaa6886598
 authors_tbl|stem|152037fd27a5756e|262d9dff051ff8ed|1f0c649c796fab03|798379734||t20531.6525666525s|s321b|321|rds|local|vector|||8.314|The `dotted_initials` argument of `get_contributions()` is deprecated as of plume 0.3.0. ℹ Please use the `dotted_initials` argument of `Plume$new()` instead.|
 render_paper_list|stem|efa6422529b8d459|be4e765010c76a59|2c530c1562a7fbd1|953443845|paper_list.md*paper_list.qmd*_extensions/pandoc-ext/bold-author/_extension.yaml*_extensions/pandoc-ext/bold-author/bold-author.lua*_extensions/pandoc-ext/multibib/_extension.yaml*_extensions/pandoc-ext/multibib/multibib.lua*phd_papers.bib|t20531.6525730763s|s9049b|9049|file|local|vector|||0.559||
-render_thesis|stem|88d4e5f05c045ac3|37a27ac08ca430b4|6dfdb686ce9091fd|-204868229|phdthesis.docx*phdthesis.pdf*paper_list.md*phdthesis.qmd*_extensions/pandoc-ext/bold-author/_extension.yaml*_extensions/pandoc-ext/bold-author/bold-author.lua*_extensions/pandoc-ext/multibib/_extension.yaml*_extensions/pandoc-ext/multibib/multibib.lua|t20531.6239993206s||65459|file|local|vector|||1.752||! Error running quarto CLI from R. Caused by error: ✖ Error returned by quarto CLI. ℹ Rerun with `quiet = FALSE` to see the full error message. Caused by error: ! System command 'quarto' failed
+authors_tbl_fct|function|8cdbd4aaa6886598
+render_thesis|stem|88d4e5f05c045ac3|8bbde48592b5e0b0|2c530c1562a7fbd1|-204868229|phdthesis.docx*phdthesis.pdf*paper_list.md*phdthesis.qmd*_extensions/pandoc-ext/bold-author/_extension.yaml*_extensions/pandoc-ext/bold-author/bold-author.lua*_extensions/pandoc-ext/multibib/_extension.yaml*_extensions/pandoc-ext/multibib/multibib.lua|t20531.6239993206s||65459|file|local|vector|||2.3||! Error running quarto CLI from R. Caused by error: ✖ Error returned by quarto CLI. ℹ Rerun with `quiet = FALSE` to see the full error message. Caused by error: ! System command 'quarto' failed
+authors_paper1|stem|216a93f027902e6d|44a0c58b45416890|6408351118335a34|1019821386||t20532.4532494605s|s194b|194|rds|local|vector|||5.842||
+authors_paper2|stem|6a20e2e488646acc|6ec4e45166d70643|6408351118335a34|607229715||t20532.4532881185s|s216b|216|rds|local|vector|||3.321||
+contributions_paper1|stem|a495f6fa277eae8d|21351bbbdde7d52b|be996885863bcdef|-298956194||t20532.4532885815s|s279b|279|rds|local|vector|||0.005||
+contrib_paper|function|19ff23ccf51ea7ac
+authors|function|a96389b5d7f1e56a
+contributions_paper2|stem|dc0f5552d8d54cdd|048f18d2940efac1|a77793f937a41993|-28937101||t20532.4538218541s|s305b|305|rds|local|vector|||0.011||
+contrib_tbl|stem|6840b17f9a4c667e|e9a510c0d121c0d7|a828a5bcd0e18c7a|1899232472||t20532.4538221203s|s323b|323|rds|local|vector|||0.003||

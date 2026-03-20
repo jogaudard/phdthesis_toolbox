@@ -60,21 +60,45 @@ tar_source() # Source other scripts as needed.
 # Replace the target list below with your own:
 list(
   tar_target(
-    name = authors_tbl,
-    command = authors_tbl_fct("authors_paper1", "authors_paper2")
+    name = authors_paper1,
+    command = authors("authors_paper1")
   ),
-  tar_quarto(
-    name = render_paper_list,
-    path = "paper_list.qmd",
-    extra_files = c(
-      "phd_papers.bib"
+  tar_target(
+    name = authors_paper2,
+    command = authors("authors_paper2")
+  ),
+  tar_target(
+    name = contributions_paper1,
+    command = contrib_paper(
+      aut_vec = authors_paper1,
+      paper_name = "Paper 1",
+      initials = "J-BD"
     )
   ),
-  tar_quarto(
-    name = render_thesis,
-    path = "phdthesis.qmd",
-    extra_files = c(
-      "paper_list.md"
+  tar_target(
+    name = contributions_paper2,
+    command = contrib_paper(
+      aut_vec = authors_paper2,
+      paper_name = "Paper 2",
+      initials = "J-BD"
     )
-  )
+  ),
+  tar_target(
+    name = contrib_tbl,
+    command = full_join(contributions_paper1, contributions_paper2, by = "Role")
+  )#,
+  # tar_quarto(
+  #   name = render_paper_list,
+  #   path = "paper_list.qmd",
+  #   extra_files = c(
+  #     "phd_papers.bib"
+  #   )
+  # ),
+  # tar_quarto(
+  #   name = render_thesis,
+  #   path = "phdthesis.qmd",
+  #   extra_files = c(
+  #     "paper_list.md"
+  #   )
+  # )
 )

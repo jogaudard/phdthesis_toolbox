@@ -8,6 +8,7 @@ format:
     include-in-header: 
       text: |
         \usepackage{lipsum}
+  docx: default
 date: today
 execute:
   echo: false
@@ -32,9 +33,22 @@ knitr::opts_chunk$set(
 options(knitr.kable.NA = '')
 options(tidyverse.quiet = TRUE)
 
+my_packages <- c(
+  "tibble",
+    "googlesheets4",
+    "plume",
+    "tidyverse",
+    "rticles",
+    "knitr",
+    "targets"
+)
+
+lapply(my_packages, library, character.only = TRUE)
+
 ```
 
 # List of Publications
+
 
 {{< include paper_list.md >}}
 
@@ -43,80 +57,23 @@ options(tidyverse.quiet = TRUE)
 #| label: contributions
 #| include: false
 
-library(googlesheets4)
-library(plume)
-library(tidyverse)
-library(rticles)
-library(knitr)
+authors_tbl <- tar_read(contrib_tbl)
+authors <- tar_read(all_authors)
 
-
-
-paper1_authors <- read_sheet(gs4_find("authors_paper1"))
-
-aut_paper1 <- Plume$new(paper1_authors)
-contributions_paper1 <- aut_paper1$get_contributions(
-  dotted_initials = FALSE,
-  sep_last = ", "
-) |>
-c()
-
-paper2_authors <- read_sheet(gs4_find("authors_paper2"))
-
-aut_paper2 <- Plume$new(paper2_authors)
-contributions_paper2 <- aut_paper2$get_contributions(
-  dotted_initials = FALSE,
-  sep_last = ", "
-) |>
-c()
-
-contrib_paper <- function(
-  aut_vec, # a vector of author contributions as produced with aut$get_contributions() |> c()
-  paper_name, # name of the paper
-  split = ": " # same as divider in get_contributions
-){
-lapply(aut_vec, string_to_table, n = 2, split_regex = split) |>
-  bind_rows() |>
-  rename(
-    Role = "X1",
-    {{paper_name}} := "X2"
-  )
-}
-
-contrib_paper1 <- contrib_paper(
-  contributions_paper1,
-  "Paper I"
-)
-
-contrib_paper2 <- contrib_paper(
-  contributions_paper2,
-  "Paper II"
-)
-
-contrib_tbl <- full_join(
-  contrib_paper1,
-  contrib_paper2,
-  by = "Role"
-)
 ```
 
 ```{r}
 #| results: asis
 #| tbl-colwidths: [30, 30, 30]
-kable(contrib_tbl)
+
+kable(authors_tbl)
 ```
 
 ```{r}
 #| label: authors
 #| include: false
 
-authors <- bind_rows(paper1_authors, paper2_authors) |>
-  select(given_name, family_name, affiliation_1, affiliation_2) |>
-  unique() |>
-  # pass this as comments first to see what the order is, and then attribute ranking and arrange
-  mutate( # we add ranking to sort by me, supervisors, others
-    ranking = c(1, 2, 3, 3)
-  ) |>
-  arrange(ranking, family_name)
+
 
 aut <- Plume$new(authors)
 

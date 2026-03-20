@@ -56,4 +56,12 @@ The list of authors and affiliations is produced with Plume.
 The only tricks here are to first bind together the author tables from the different paper, apply unique to avoid duplicates, and add a ranking (optional).
 The ranking allows you to force the order if you want to have everyone in alphabetical order, but yourself first following by your supervisors and then the other co authors.
 
+# Rendering the thesis
+
+The repo is now organised with `targets` [@targetsRpackage2021] and you just need to run the following code to render everything:
+
+```{r}
+targets::tar_make()
+```
+
 ### References

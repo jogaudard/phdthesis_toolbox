@@ -11,9 +11,7 @@ bibliography:
   papers: phd_papers.bib
   other: others.bib
 nocite: |
-  @stupid
-  @coolpaper
-  @thatotherpaper
+  @*
 validate-yaml: false
 ---
 

@@ -1,0 +1,68 @@
+---
+title: Declaration of author contributions - PhD thesis Jean-Bob Delatourte
+csl: apa-old-doi-prefix.csl
+format:
+    pdf: default
+    docx:
+        number-sections: true
+filters:
+  - multibib
+  - bold-author
+bold-auth-name:
+  - family: Delatourte
+    given: J.-B.
+bibliography:
+  papers: phd_papers.bib
+nocite: |
+  @*
+validate-yaml: false
+execute:
+  echo: false
+---
+
+\phantomsection
+# Publications included in the thesis {.unnumbered}
+
+::: {#refs-papers}
+:::
+
+<!-- \newpage -->
+\phantomsection
+# Authors contributions {.unnumbered}
+
+```{r}
+#| label: setup
+#| include: false
+
+my_packages <- c(
+    "knitr",
+    "targets"
+)
+
+lapply(my_packages, library, character.only = TRUE)
+
+
+authors_tbl <- tar_read(contrib_tbl)
+
+```
+
+```{r}
+#| results: asis
+#| tbl-colwidths: [30, 30, 30]
+
+options(knitr.kable.NA = '')
+kable(authors_tbl)
+```
+
+\vspace{0.5cm}
+
+Bergen, \today
+
+\vspace{0.8cm}
+
+Supervisor
+\hspace{1.5cm}
+Supervisor
+\hspace{1.5cm}
+Supervisor
+

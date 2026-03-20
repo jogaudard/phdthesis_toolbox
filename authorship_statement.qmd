@@ -1,6 +1,6 @@
 ---
-title: Declaration of author contributions - PhD thesis Joseph Gaudard
-csl: /home/jga051/Documents/01_PhD/methods-in-ecology-and-evolution.csl
+title: Declaration of author contributions - PhD thesis Jean-Bob Delatourte
+csl: apa-old-doi-prefix.csl
 format:
     pdf: default
     docx:
@@ -9,10 +9,10 @@ filters:
   - multibib
   - bold-author
 bold-auth-name:
-  - family: Gaudard
-    given: J.
+  - family: Delatourte
+    given: J.-B.
 bibliography:
-  papers: papers.bib
+  papers: phd_papers.bib
 nocite: |
   @*
 validate-yaml: false
@@ -26,7 +26,7 @@ execute:
 ::: {#refs-papers}
 :::
 
-\newpage
+<!-- \newpage -->
 \phantomsection
 # Authors contributions {.unnumbered}
 
@@ -36,14 +36,13 @@ execute:
 
 my_packages <- c(
     "knitr",
-    "plume"
+    "targets"
 )
 
 lapply(my_packages, library, character.only = TRUE)
 
 
-contrib_tbl <- readRDS("contrib_tbl.rds")
-aut <- readRDS("aut.rds")
+authors_tbl <- tar_read(contrib_tbl)
 
 ```
 
@@ -52,7 +51,7 @@ aut <- readRDS("aut.rds")
 #| tbl-colwidths: [30, 30, 30]
 
 options(knitr.kable.NA = '')
-kable(contrib_tbl)
+kable(authors_tbl)
 ```
 
 \vspace{0.5cm}

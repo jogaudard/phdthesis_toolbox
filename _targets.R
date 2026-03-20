@@ -107,10 +107,18 @@ list(
     )
   ),
   tar_quarto(
+    name = render_authorship_statement,
+    path = "authorship_statement.qmd",
+    extra_files = c(
+      "phd_papers.bib"
+    )
+  ),
+  tar_quarto(
     name = render_paper_list,
     path = "paper_list.qmd",
     extra_files = c(
-      "phd_papers.bib"
+      "phd_papers.bib",
+      "others.bib"
     )
   ),
   tar_quarto(

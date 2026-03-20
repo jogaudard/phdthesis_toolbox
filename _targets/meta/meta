@@ -1,7 +1,6 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 auhtors_tbl|function|8cdbd4aaa6886598
 authors_tbl|stem|152037fd27a5756e|262d9dff051ff8ed|1f0c649c796fab03|798379734||t20531.6525666525s|s321b|321|rds|local|vector|||8.314|The `dotted_initials` argument of `get_contributions()` is deprecated as of plume 0.3.0. ℹ Please use the `dotted_initials` argument of `Plume$new()` instead.|
-render_paper_list|stem|efa6422529b8d459|be4e765010c76a59|2c530c1562a7fbd1|953443845|paper_list.md*paper_list.qmd*_extensions/pandoc-ext/bold-author/_extension.yaml*_extensions/pandoc-ext/bold-author/bold-author.lua*_extensions/pandoc-ext/multibib/_extension.yaml*_extensions/pandoc-ext/multibib/multibib.lua*phd_papers.bib|t20531.6525730763s|s9049b|9049|file|local|vector|||0.559||
 authors_tbl_fct|function|8cdbd4aaa6886598
 contributions_paper1|stem|a495f6fa277eae8d|21351bbbdde7d52b|be996885863bcdef|-298956194||t20532.4532885815s|s279b|279|rds|local|vector|||0.005||
 contributions_paper2|stem|dc0f5552d8d54cdd|048f18d2940efac1|a77793f937a41993|-28937101||t20532.4538218541s|s305b|305|rds|local|vector|||0.011||
@@ -14,7 +13,9 @@ all_authors|stem|d4093f53b1b97fb1|31a1f975b514da49|50f9a57a2dc9f624|1747003606||
 contributions_tbl_paper1|stem|a495f6fa277eae8d|a4868c907823d35b|87b7300012fc0327|-1992989861||t20532.5518355333s|s279b|279|rds|local|vector|||0.008||
 contributions_tbl_paper2|stem|dc0f5552d8d54cdd|c00c89b795dce059|4fac4a2628172787|-1898109968||t20532.5518357416s|s305b|305|rds|local|vector|||0.006||
 contrib_tbl|stem|6840b17f9a4c667e|64c68845ead48a8b|6ab56e35b7383415|1899232472||t20532.551835869s|s323b|323|rds|local|vector|||0.002||
+render_paper_list|stem|77d49bc073253847|613ef5f6282c39d9|2c530c1562a7fbd1|953443845|paper_list.md*paper_list.qmd*_extensions/pandoc-ext/bold-author/_extension.yaml*_extensions/pandoc-ext/bold-author/bold-author.lua*_extensions/pandoc-ext/multibib/_extension.yaml*_extensions/pandoc-ext/multibib/multibib.lua*others.bib*phd_papers.bib|t20532.5566304355s|s9242b|9242|file|local|vector|||0.857||
+render_thesis|stem|bcf79be8a9f0f6c9|5350511f2b2ba181|d057bb037e465c60|-204868229|phdthesis.docx*phdthesis.pdf*paper_list.md*phdthesis.qmd*_extensions/pandoc-ext/bold-author/_extension.yaml*_extensions/pandoc-ext/bold-author/bold-author.lua*_extensions/pandoc-ext/multibib/_extension.yaml*_extensions/pandoc-ext/multibib/multibib.lua|t20532.5566304355s|s63597b|63597|file|local|vector|||6.536||
 authors_list|function|1e2d383df1a97ff8
 contrib_paper|function|2538eab3dacdbfbf
 contrib_paper_tbl|function|19ff23ccf51ea7ac
-render_thesis|stem|bcf79be8a9f0f6c9|5350511f2b2ba181|d057bb037e465c60|-204868229|phdthesis.docx*phdthesis.pdf*paper_list.md*phdthesis.qmd*_extensions/pandoc-ext/bold-author/_extension.yaml*_extensions/pandoc-ext/bold-author/bold-author.lua*_extensions/pandoc-ext/multibib/_extension.yaml*_extensions/pandoc-ext/multibib/multibib.lua|t20532.5525325814s|s63597b|63597|file|local|vector|||6.536||
+render_authorship_statement|stem|645d70b1719a7731|654fc42fad756e6d|c5007af130ad2d57|-481840690|authorship_statement.docx*authorship_statement.pdf*authorship_statement.qmd*_extensions/pandoc-ext/bold-author/_extension.yaml*_extensions/pandoc-ext/bold-author/bold-author.lua*_extensions/pandoc-ext/multibib/_extension.yaml*_extensions/pandoc-ext/multibib/multibib.lua*phd_papers.bib|t20532.5602429231s|s38060b|38060|file|local|vector|||5.901||

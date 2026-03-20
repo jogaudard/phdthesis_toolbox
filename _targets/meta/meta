@@ -4,10 +4,17 @@ authors_tbl|stem|152037fd27a5756e|262d9dff051ff8ed|1f0c649c796fab03|798379734||t
 render_paper_list|stem|efa6422529b8d459|be4e765010c76a59|2c530c1562a7fbd1|953443845|paper_list.md*paper_list.qmd*_extensions/pandoc-ext/bold-author/_extension.yaml*_extensions/pandoc-ext/bold-author/bold-author.lua*_extensions/pandoc-ext/multibib/_extension.yaml*_extensions/pandoc-ext/multibib/multibib.lua*phd_papers.bib|t20531.6525730763s|s9049b|9049|file|local|vector|||0.559||
 authors_tbl_fct|function|8cdbd4aaa6886598
 render_thesis|stem|88d4e5f05c045ac3|8bbde48592b5e0b0|2c530c1562a7fbd1|-204868229|phdthesis.docx*phdthesis.pdf*paper_list.md*phdthesis.qmd*_extensions/pandoc-ext/bold-author/_extension.yaml*_extensions/pandoc-ext/bold-author/bold-author.lua*_extensions/pandoc-ext/multibib/_extension.yaml*_extensions/pandoc-ext/multibib/multibib.lua|t20531.6239993206s||65459|file|local|vector|||2.3||! Error running quarto CLI from R. Caused by error: ✖ Error returned by quarto CLI. ℹ Rerun with `quiet = FALSE` to see the full error message. Caused by error: ! System command 'quarto' failed
-authors_paper1|stem|216a93f027902e6d|44a0c58b45416890|6408351118335a34|1019821386||t20532.4532494605s|s194b|194|rds|local|vector|||5.842||
-authors_paper2|stem|6a20e2e488646acc|6ec4e45166d70643|6408351118335a34|607229715||t20532.4532881185s|s216b|216|rds|local|vector|||3.321||
 contributions_paper1|stem|a495f6fa277eae8d|21351bbbdde7d52b|be996885863bcdef|-298956194||t20532.4532885815s|s279b|279|rds|local|vector|||0.005||
-contrib_paper|function|19ff23ccf51ea7ac
-authors|function|a96389b5d7f1e56a
 contributions_paper2|stem|dc0f5552d8d54cdd|048f18d2940efac1|a77793f937a41993|-28937101||t20532.4538218541s|s305b|305|rds|local|vector|||0.011||
-contrib_tbl|stem|6840b17f9a4c667e|e9a510c0d121c0d7|a828a5bcd0e18c7a|1899232472||t20532.4538221203s|s323b|323|rds|local|vector|||0.003||
+authors|function|a96389b5d7f1e56a
+authors_paper1|stem|9d130ef40c5e1482|a18c471e5bec70ec|2c530c1562a7fbd1|1019821386||t20532.5513769612s|s505b|505|rds|local|vector|||5.076||
+authors_list|function|1e2d383df1a97ff8
+contrib_paper|function|2538eab3dacdbfbf
+contrib_paper_tbl|function|19ff23ccf51ea7ac
+authors_paper2|stem|37b9b35a847beb54|0813f0c605ab11ab|2c530c1562a7fbd1|607229715||t20532.5518337624s|s493b|493|rds|local|vector|||4.685||
+contrib_paper1|stem|216a93f027902e6d|c398509da7c3600c|3ac1e86dfa374c88|1005617136||t20532.5518344916s|s194b|194|rds|local|vector|||0.046||
+contrib_paper2|stem|6a20e2e488646acc|12901fcda3aa17a7|4db3351f8a8945d3|337435603||t20532.5518351745s|s216b|216|rds|local|vector|||0.03||
+all_authors|stem|d4093f53b1b97fb1|31a1f975b514da49|50f9a57a2dc9f624|1747003606||t20532.5518353597s|s353b|353|rds|local|vector|||0.005||
+contributions_tbl_paper1|stem|a495f6fa277eae8d|a4868c907823d35b|87b7300012fc0327|-1992989861||t20532.5518355333s|s279b|279|rds|local|vector|||0.008||
+contributions_tbl_paper2|stem|dc0f5552d8d54cdd|c00c89b795dce059|4fac4a2628172787|-1898109968||t20532.5518357416s|s305b|305|rds|local|vector|||0.006||
+contrib_tbl|stem|6840b17f9a4c667e|64c68845ead48a8b|6ab56e35b7383415|1899232472||t20532.551835869s|s323b|323|rds|local|vector|||0.002||

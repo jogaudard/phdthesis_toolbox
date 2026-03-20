@@ -61,44 +61,63 @@ tar_source() # Source other scripts as needed.
 list(
   tar_target(
     name = authors_paper1,
-    command = authors("authors_paper1")
+    command = read_sheet(gs4_find("authors_paper1"))
   ),
   tar_target(
     name = authors_paper2,
-    command = authors("authors_paper2")
+    command = read_sheet(gs4_find("authors_paper2"))
   ),
   tar_target(
-    name = contributions_paper1,
-    command = contrib_paper(
-      aut_vec = authors_paper1,
+    name = contrib_paper1,
+    command = contrib_paper(authors_paper1)
+  ),
+  tar_target(
+    name = contrib_paper2,
+    command = contrib_paper(authors_paper2)
+  ),
+  tar_target(
+    name = contributions_tbl_paper1,
+    command = contrib_paper_tbl(
+      aut_vec = contrib_paper1,
       paper_name = "Paper 1",
-      initials = "J-BD"
+      initials = "J-BD" # the initials you want in bold
     )
   ),
   tar_target(
-    name = contributions_paper2,
-    command = contrib_paper(
-      aut_vec = authors_paper2,
+    name = contributions_tbl_paper2,
+    command = contrib_paper_tbl(
+      aut_vec = contrib_paper2,
       paper_name = "Paper 2",
       initials = "J-BD"
     )
   ),
   tar_target(
     name = contrib_tbl,
-    command = full_join(contributions_paper1, contributions_paper2, by = "Role")
-  )#,
-  # tar_quarto(
-  #   name = render_paper_list,
-  #   path = "paper_list.qmd",
-  #   extra_files = c(
-  #     "phd_papers.bib"
-  #   )
-  # ),
-  # tar_quarto(
-  #   name = render_thesis,
-  #   path = "phdthesis.qmd",
-  #   extra_files = c(
-  #     "paper_list.md"
-  #   )
-  # )
+    command = full_join(
+      contributions_tbl_paper1,
+      contributions_tbl_paper2,
+      by = "Role")
+  ),
+  tar_target(
+    name = all_authors,
+    command = authors_list(
+      ranks = c(1, 2, 3, 3),
+      authors_paper1,
+      authors_paper2
+    )
+  ),
+  tar_quarto(
+    name = render_paper_list,
+    path = "paper_list.qmd",
+    extra_files = c(
+      "phd_papers.bib"
+    )
+  ),
+  tar_quarto(
+    name = render_thesis,
+    path = "phdthesis.qmd",
+    extra_files = c(
+      "paper_list.md"
+    )
+  )
 )

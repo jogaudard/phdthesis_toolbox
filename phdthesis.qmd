@@ -39,7 +39,8 @@ my_packages <- c(
     "plume",
     "tidyverse",
     "rticles",
-    "knitr"
+    "knitr",
+    "targets"
 )
 
 lapply(my_packages, library, character.only = TRUE)
@@ -56,7 +57,8 @@ lapply(my_packages, library, character.only = TRUE)
 #| label: contributions
 #| include: false
 
-
+authors_tbl <- tar_read(contrib_tbl)
+authors <- tar_read(all_authors)
 
 ```
 
@@ -64,22 +66,14 @@ lapply(my_packages, library, character.only = TRUE)
 #| results: asis
 #| tbl-colwidths: [30, 30, 30]
 
-library(targets)
-kable(tar_read(authors_tbl))
+kable(authors_tbl)
 ```
 
 ```{r}
 #| label: authors
 #| include: false
 
-authors <- bind_rows(paper1_authors, paper2_authors) |>
-  select(given_name, family_name, affiliation_1, affiliation_2) |>
-  unique() |>
-  # pass this as comments first to see what the order is, and then attribute ranking and arrange
-  mutate( # we add ranking to sort by me, supervisors, others
-    ranking = c(1, 2, 3, 3)
-  ) |>
-  arrange(ranking, family_name)
+
 
 aut <- Plume$new(authors)
 

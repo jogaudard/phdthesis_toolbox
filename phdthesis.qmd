@@ -57,6 +57,18 @@ my_packages <- c(
 
 lapply(my_packages, library, character.only = TRUE)
 
+# to ensure that all your plots use the same color scheme, you can set them here
+
+color_warming <- list(
+    ambient = "#1A85FF",
+    warming = "#D41159"
+)
+
+# set the theme and size for your figures here to ensure something homegeneous, and big enough
+theme_set(theme_bw(base_size = 24))
+update_geom_defaults("point", list(size = 2))
+update_geom_defaults("line", list(linewidth = 2))
+
 ```
 
 {{< pagebreak >}}
@@ -223,7 +235,7 @@ We can also cite a paper where we are co author [@delatourte2025] and the name w
 \lipsum
 
 \phantomsection
-## Sub section
+# Section
 
 
 \lipsum
@@ -233,7 +245,7 @@ Here I just provide an example (@fig-fig-caption-on-side) where the figure is sm
 
 ::: {#fig-caption-on-side fig-env="SCfigure" fig-pos =""}
   ```{=latex}
-  \includegraphics[width=0.5\textwidth]{figures/crazy_pie.png} 
+  \includegraphics[width=0.5\textwidth]{figures/crazy_pie.jpeg} 
   ```
   My partner made that one, just saying.
 :::

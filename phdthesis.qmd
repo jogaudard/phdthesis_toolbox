@@ -52,7 +52,8 @@ my_packages <- c(
     "tidyverse",
     "rticles",
     "knitr",
-    "targets"
+    "targets",
+    "pakret"
 )
 
 lapply(my_packages, library, character.only = TRUE)
@@ -78,26 +79,12 @@ update_geom_defaults("line", list(linewidth = 2))
 \vfill
 <!-- \vspace{3cm} -->
 
-<!-- whatever quotes inspires you, or none -->
 
-> "I ASK YOU,
-
-> If you had the power, to create all matter, including life, and you could synchronize, those creations, perfectly, what would you do, if one life form, was apparently abusing, all other life, including themselves?
-> 
-> If the original "INTENT", of your creation, had apparently been twisted, from "RESPECT", to hatred, from compassion, to oppression, from generosity, to greed, and from dignity, to defilement, what would you do?
-> 
-> How would you convince, people, that material temptations, social status, and education institutions, are used, to preserve and perpetuate, the status quo, with very little *real*, consideration, for the future, of life, on earth?
-> 
-> How would you, as "THE CREATOR OF LIFE", show your *contempt* and *revulsion*, for the institutions, and the individuals, who are supposed to protect life, but are apparently, doing something quite different, instead?"
+> Inpiration quote. Or nothing. We won't judge.
 
 \vspace{1cm}
 
-Introduction to Grant Hadwin's first disappearance manifesto (1993).
-Grant Hadwin was later "rescued", and, in 1997, he fell the Sacred Golden Spruce of Haida Gwaii in protest of the absurdity of protecting one single tree while logging the rest of the territory.
-He was arrested, escaped, disappeared in Alaska, and has never been found.
-
-
-In *The golden spruce: a true story of myth, madness and greed*, John Vaillant, 2006.
+About the quote.
 
 
 \vfill
@@ -117,7 +104,7 @@ List funding sources
 
 \vspace{2cm}
 
-<!-- add logos -->
+<!-- add logos if relevant -->
 
 ::: {layout="[ 50, 50 ]"}
 
@@ -240,8 +227,8 @@ We can also cite a paper where we are co author [@delatourte2025] and the name w
 
 \lipsum
 
-You can use the normal quarto and \latex ways to include figures, code chunks, links, or other things.
-Here I just provide an example (@fig-fig-caption-on-side) where the figure is small and we want the caption on the side to organise the page better.
+You can use the normal quarto and \LaTeX ways to include figures, code chunks, links, or other things.
+Here I just provide an example (@fig-caption-on-side) where the figure is small and we want the caption on the side to organise the page better.
 
 ::: {#fig-caption-on-side fig-env="SCfigure" fig-pos =""}
   ```{=latex}
@@ -276,7 +263,8 @@ R package used in this template repo:
   "rticles",
   "knitr",
   "targets",
-  "quarto"
+  "quarto",
+  "pakret"
 )`
 
 \phantomsection
@@ -311,8 +299,6 @@ R package used in this template repo:
 ` `
 \vfill
 
-<!-- "Et voilà" was written at the end of a tutorial in the appendix of my methodology paper. Reviewer told me to "stick to English language, not everybody knows French". So here it is. -->
 \begin{flushright}
-<!-- You can write your own joke here, or nothing, as you wish. -->
-\textit{Voilà.}
+\textit{Closing word. Or nothing.}
 \end{flushright}

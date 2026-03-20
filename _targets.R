@@ -128,6 +128,7 @@ list(
     path = "phdthesis.qmd",
     extra_files = c(
       "paper_list.md"
-    )
+    ),
+    quiet = FALSE # to show the progress of rendering the thesis, which can be long, and can give clues about potential issues. You can set this to TRUE if you prefer a cleaner output.
   )
 )

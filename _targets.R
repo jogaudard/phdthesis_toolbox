@@ -61,11 +61,13 @@ tar_source() # Source other scripts as needed.
 list(
   tar_target(
     name = authors_paper1,
-    command = read_sheet(gs4_find("authors_paper1"))
+    command = read_sheet(gs4_find("authors_paper1"))#,
+    # cue = tar_cue(mode = "always") # since there is no way to detect that the google sheet has been updated, we set the cue to always so that the target will be rerun every time. You can change this if you have a different way to detect updates.
   ),
   tar_target(
     name = authors_paper2,
-    command = read_sheet(gs4_find("authors_paper2"))
+    command = read_sheet(gs4_find("authors_paper2"))#,
+    # cue = tar_cue(mode = "always")
   ),
   tar_target(
     name = contrib_paper1,
@@ -101,7 +103,7 @@ list(
   tar_target(
     name = all_authors,
     command = authors_list(
-      ranks = c(1, 2, 3, 3),
+      ranks = c(1, 2, 3, 3), # the ranks of the authors in the author list, with 1 being the first author, 2 the second, and so on. Authors with the same rank will be listed in alphabetical order. 1 will just give the list in alphabetical order.
       authors_paper1,
       authors_paper2
     )

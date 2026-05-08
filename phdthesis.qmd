@@ -5,6 +5,8 @@ format:
   pdf:
     number-sections: false
     colorlinks: false
+    fontsize: 13pt
+    linestretch: 1.5
     include-in-header: 
       text: |
         \usepackage{lipsum}

@@ -154,6 +154,8 @@ Don't forget to thank your office mates.
 
 {{< pagebreak >}}
 
+{{< include other_papers_list.md >}}
+
 \phantomsection
 ## Authors contribution
 

@@ -119,7 +119,13 @@ list(
     name = render_paper_list,
     path = "paper_list.qmd",
     extra_files = c(
-      "phd_papers.bib",
+      "phd_papers.bib"
+    )
+  ),
+  tar_quarto(
+    name = render_other_papers_list,
+    path = "other_papers_list.qmd",
+    extra_files = c(
       "others.bib"
     )
   ),
@@ -127,7 +133,8 @@ list(
     name = render_thesis,
     path = "phdthesis.qmd",
     extra_files = c(
-      "paper_list.md"
+      "paper_list.md",
+      "other_papers_list.md"
     ),
     quiet = FALSE # to show the progress of rendering the thesis, which can be long, and can give clues about potential issues. You can set this to TRUE if you prefer a cleaner output.
   )

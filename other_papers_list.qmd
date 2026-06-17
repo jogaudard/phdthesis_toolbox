@@ -15,8 +15,8 @@ nocite: |
 validate-yaml: false
 ---
 
-## Publications included in the thesis
 
+## Contributions to other publications during the PhD period
 
-::: {#refs-papers}
+::: {#refs-other}
 :::

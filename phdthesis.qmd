@@ -5,6 +5,8 @@ format:
   pdf:
     number-sections: false
     colorlinks: false
+    fontsize: 13pt
+    linestretch: 1.5
     include-in-header: 
       text: |
         \usepackage{lipsum}
@@ -152,6 +154,8 @@ Don't forget to thank your office mates.
 
 {{< pagebreak >}}
 
+{{< include other_papers_list.md >}}
+
 \phantomsection
 ## Authors contribution
 
@@ -204,6 +208,11 @@ aut$get_affiliations() |> cat(sep = "\n\n")
 \setcounter{page}{0}
 <!-- and for the main course we want arabic number -->
 \pagenumbering{arabic}
+
+<!-- the following it to make a blank page. It is needed when sending for printing, because they want all the chapter starts to be printed on a right page. -->
+{{< pagebreak >}}
+` `
+{{< pagebreak >}}
 
 \phantomsection
 # Introduction

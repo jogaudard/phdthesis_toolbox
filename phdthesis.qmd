@@ -207,6 +207,11 @@ aut$get_affiliations() |> cat(sep = "\n\n")
 <!-- and for the main course we want arabic number -->
 \pagenumbering{arabic}
 
+<!-- the following it to make a blank page. It is needed when sending for printing, because they want all the chapter starts to be printed on a right page. -->
+{{< pagebreak >}}
+` `
+{{< pagebreak >}}
+
 \phantomsection
 # Introduction
 

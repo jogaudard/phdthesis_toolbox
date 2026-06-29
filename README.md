@@ -100,6 +100,26 @@ figures.
 The papers are added as pdf files, so there you do whatever you want to
 produce them. Published papers can be added as pdfs too.
 
+## How to cite
+
+I don’t expect you to cite this repo if you just use it to write your
+own thesis. However, if you want to disseminate it, or build on it, here
+is the citation:
+
+    #> Ignoring entry '10261_60675'  (line1) because:
+    #>  'bibtype' has to be one of Article, Book, MVBook, InBook, BookInBook, SuppBook, Booklet, Collection, MVCollection, InCollection, SuppCollection, Manual, Misc, Online, Patent, Periodical, SuppPeriodical, Proceedings, MVProceedings, InProceedings, Reference, MVReference, InReference, Report, Set, Thesis, Unpublished, XData, Customa, Customb, Customc, Customd, Custome, Customf, Conference, Electronic, MastersThesis, PhdThesis, TechReport, Www, Artwork, Audio, BibNote, Commentary, Image, Jurisdiction, Legislation, Legal, Letter, Movie, Music, Performance, Review, Software, Standard, Video
+    #> [1] J. Gaudard. _Some Technical Tricks to Write a PhD Thesis in
+    #> Quarto_. Manual. <https://github.com/jogaudard/phdthesis_toolbox>.
+    #> 2025.
+
+    #> @manual{phdthesis_toolbox,
+    #>   type = {Manual},
+    #>   title = {Some Technical Tricks to Write a {{PhD}} Thesis in {{Quarto}}},
+    #>   author = {Joseph Gaudard},
+    #>   year = {2025},
+    #>   note = {\url{https://github.com/jogaudard/phdthesis_toolbox}},
+    #> }
+
 ### References
 
 <div id="refs" class="references csl-bib-body hanging-indent"

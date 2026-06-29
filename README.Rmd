@@ -75,4 +75,34 @@ If you are using large dataset or making figures in the thesis itself, you can a
 The papers are added as pdf files, so there you do whatever you want to produce them.
 Published papers can be added as pdfs too.
 
+## How to cite
+
+I don't expect you to cite this repo if you just use it to write your own thesis.
+However, if you want to disseminate it, or build on it, here is the citation:
+
+```{r, eval = TRUE, echo = FALSE}
+
+# Load bibtex parser
+
+library(RefManageR)
+
+# Read the .bib file
+
+bib <- ReadBib("/home/jga051/Dropbox/PhD/biblio_phd_zot.bib", check = FALSE)
+
+# Select one entry (by key)
+
+entry_key <- "phdthesis_toolbox"
+
+# Get formatted citation (plain text)
+
+cat(format(bib[[entry_key]], style = "text"))
+
+# Print the BibTeX block
+
+cat(" \n", " \n")
+cat(toBibtex(bib[[entry_key]]), sep = "\n")
+
+```
+
 ### References

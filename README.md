@@ -120,6 +120,10 @@ is the citation:
     #>   note = {\url{https://github.com/jogaudard/phdthesis_toolbox}},
     #> }
 
+The original content of this repo is licensed under a [Creative Commons
+Attribution 4.0 International
+License](https://creativecommons.org/licenses/by/4.0/).
+
 ### References
 
 <div id="refs" class="references csl-bib-body hanging-indent"

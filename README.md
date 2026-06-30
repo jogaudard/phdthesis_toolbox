@@ -1,4 +1,4 @@
-Thesis Quarto Template
+Some technical tricks to write a PhD thesis in Quarto
 ================
 Joseph Gaudard
 
@@ -99,6 +99,28 @@ figures.
 
 The papers are added as pdf files, so there you do whatever you want to
 produce them. Published papers can be added as pdfs too.
+
+## How to cite
+
+I don’t expect you to cite this repo if you just use it to write your
+own thesis. However, if you want to disseminate it, or build on it, here
+is the citation:
+
+    #> [1] J. Gaudard. _Some Technical Tricks to Write a PhD Thesis in
+    #> Quarto_. Manual. <https://github.com/jogaudard/phdthesis_toolbox>.
+    #> 2025.
+
+    #> @manual{phdthesis_toolbox,
+    #>   type = {Manual},
+    #>   title = {Some Technical Tricks to Write a {{PhD}} Thesis in {{Quarto}}},
+    #>   author = {Joseph Gaudard},
+    #>   year = {2025},
+    #>   note = {\url{https://github.com/jogaudard/phdthesis_toolbox}},
+    #> }
+
+The original content of this repo is licensed under a [Creative Commons
+Attribution 4.0 International
+License](https://creativecommons.org/licenses/by/4.0/).
 
 ### References
 

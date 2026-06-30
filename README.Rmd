@@ -1,5 +1,5 @@
 ---
-title: "Thesis Quarto Template"
+title: "Some technical tricks to write a PhD thesis in Quarto"
 author: "Joseph Gaudard"
 output: github_document
 bibliography: /home/jga051/Dropbox/PhD/biblio_phd_zot.bib
